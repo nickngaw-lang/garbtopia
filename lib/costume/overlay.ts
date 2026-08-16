@@ -3,12 +3,19 @@ import { readFile } from "fs/promises";
 import path from "path";
 import type { OverlayConfig } from "@/lib/types";
 
+function getBaseUrl(): string {
+  if (process.env.NEXT_PUBLIC_APP_URL) return process.env.NEXT_PUBLIC_APP_URL;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return "http://localhost:3000";
+}
+
 /**
  * Loads image bytes for either an absolute URL (Supabase Storage, external
  * host) or a path served from /public (e.g. "/costumes/kimono.svg" for our
- * seeded demo assets). Reading /public assets straight off disk avoids
- * needing a self-fetch over HTTP (which needs an absolute base URL) from
- * inside a server action.
+ * seeded demo assets). Tries a direct filesystem read first (fast, works in
+ * `next dev`), and falls back to an HTTP fetch against the app's own origin
+ * — on Vercel, /public assets are served from the CDN and are NOT present on
+ * the serverless function's local disk, so the fs read 404s there.
  */
 export async function loadImageBuffer(url: string): Promise<Buffer> {
   if (/^https?:\/\//i.test(url)) {
@@ -16,9 +23,16 @@ export async function loadImageBuffer(url: string): Promise<Buffer> {
     if (!res.ok) throw new Error(`Failed to fetch image (${res.status}): ${url}`);
     return Buffer.from(await res.arrayBuffer());
   }
+
   const relative = url.replace(/^\//, "");
   const filePath = path.join(process.cwd(), "public", relative);
-  return readFile(filePath);
+  try {
+    return await readFile(filePath);
+  } catch {
+    const res = await fetch(`${getBaseUrl()}/${relative}`);
+    if (!res.ok) throw new Error(`Failed to fetch image (${res.status}): ${url}`);
+    return Buffer.from(await res.arrayBuffer());
+  }
 }
 
 const DEFAULT_CONFIG: OverlayConfig = { x: 0.5, y: 0.35, scale: 0.6, rotation: 0 };
