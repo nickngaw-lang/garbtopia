@@ -1,0 +1,19 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="shukaPlaid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#c0304a"/>
+      <rect x="0" width="14" height="60" fill="#1a1a1a"/>
+      <rect y="0" width="60" height="14" fill="#1a1a1a"/>
+    </pattern>
+  </defs>
+  <!-- wrap draped over both shoulders -->
+  <path d="M240 60 L460 60 L520 260 L470 660 L230 660 L180 260 Z" fill="url(#shukaPlaid)"/>
+  <!-- beaded collar -->
+  <g>
+    <circle cx="290" cy="120" r="10" fill="#f2c84b"/>
+    <circle cx="330" cy="130" r="10" fill="#12a08d"/>
+    <circle cx="370" cy="132" r="10" fill="#c0304a"/>
+    <circle cx="410" cy="128" r="10" fill="#f2c84b"/>
+    <circle cx="440" cy="118" r="10" fill="#12a08d"/>
+  </g>
+</svg>

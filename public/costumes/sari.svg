@@ -1,0 +1,11 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- blouse -->
+  <path d="M270 40 L430 40 L450 180 L250 180 Z" fill="#0f7a6b"/>
+  <!-- draped body of sari -->
+  <path d="M240 170 L460 170 L500 660 L200 660 Z" fill="#12a08d"/>
+  <!-- pallu drape across body -->
+  <path d="M470 150 Q560 300 520 500 Q480 620 400 650 L440 500 Q470 330 400 200 Z" fill="#e8b840"/>
+  <!-- gold border trim -->
+  <path d="M200 660 L500 660 L490 620 L210 620 Z" fill="#e8b840"/>
+  <rect x="240" y="170" width="220" height="14" fill="#e8b840"/>
+</svg>

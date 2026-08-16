@@ -1,0 +1,13 @@
+<svg viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#f5ede1"/>
+  <ellipse cx="400" cy="1180" rx="260" ry="40" fill="#e8dcc8"/>
+  <!-- torso / shoulders -->
+  <path d="M250 1200 L260 640 Q260 560 400 555 Q540 560 540 640 L550 1200 Z" fill="#5b6b73"/>
+  <!-- neck -->
+  <rect x="368" y="330" width="64" height="260" rx="20" fill="#c88a5b"/>
+  <!-- head -->
+  <circle cx="400" cy="255" r="112" fill="#c88a5b"/>
+  <!-- hair (bun) -->
+  <path d="M292 230 Q290 120 400 118 Q510 120 508 230 Q508 150 400 150 Q292 150 292 230 Z" fill="#2e2015"/>
+  <circle cx="400" cy="128" r="34" fill="#2e2015"/>
+</svg>

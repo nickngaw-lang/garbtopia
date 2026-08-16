@@ -1,0 +1,14 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- chima (skirt), high-waisted -->
+  <path d="M240 260 L460 260 L560 660 L140 660 Z" fill="#3f7fc1"/>
+  <!-- jeogori (short bolero top) -->
+  <path d="M280 40 L420 40 L470 130 L440 260 L260 260 L230 130 Z" fill="#f4e8d8"/>
+  <!-- sleeves -->
+  <path d="M280 40 L200 90 L230 200 L260 260 Z" fill="#f4e8d8"/>
+  <path d="M420 40 L500 90 L470 200 L440 260 Z" fill="#f4e8d8"/>
+  <!-- goreum ribbon -->
+  <path d="M330 150 L350 260 L370 150 Z" fill="#c0304a"/>
+  <path d="M330 150 L390 175 L370 210 Z" fill="#c0304a"/>
+  <!-- waist band -->
+  <rect x="240" y="250" width="220" height="24" fill="#e8b840"/>
+</svg>

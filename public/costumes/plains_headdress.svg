@@ -1,0 +1,28 @@
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- radiating feathers -->
+  <g stroke="#7a5230" stroke-width="2">
+    <path d="M350 250 L120 40 L150 90 L180 60 Z" fill="#f4ede0"/>
+    <path d="M350 250 L200 20 L225 75 L255 50 Z" fill="#e9dfca"/>
+    <path d="M350 250 L280 10 L295 70 L320 40 Z" fill="#f4ede0"/>
+    <path d="M350 250 L350 0 L365 65 L335 65 Z" fill="#e9dfca"/>
+    <path d="M350 250 L420 10 L405 70 L380 40 Z" fill="#f4ede0"/>
+    <path d="M350 250 L500 20 L475 75 L445 50 Z" fill="#e9dfca"/>
+    <path d="M350 250 L580 40 L550 90 L520 60 Z" fill="#f4ede0"/>
+  </g>
+  <!-- feather black tips -->
+  <g fill="#1a1a1a">
+    <circle cx="130" cy="50" r="10"/>
+    <circle cx="207" cy="28" r="10"/>
+    <circle cx="284" cy="16" r="10"/>
+    <circle cx="350" cy="6" r="10"/>
+    <circle cx="416" cy="16" r="10"/>
+    <circle cx="493" cy="28" r="10"/>
+    <circle cx="570" cy="50" r="10"/>
+  </g>
+  <!-- browband -->
+  <rect x="230" y="230" width="240" height="50" rx="10" fill="#8a3b24"/>
+  <circle cx="270" cy="255" r="9" fill="#f2c84b"/>
+  <circle cx="320" cy="255" r="9" fill="#12a08d"/>
+  <circle cx="380" cy="255" r="9" fill="#c0304a"/>
+  <circle cx="430" cy="255" r="9" fill="#f2c84b"/>
+</svg>

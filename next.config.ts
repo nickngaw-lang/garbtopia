@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   // so we don't let them block a deployment.
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
+  // sharp ships a native binary — keep it external to the server bundle so
+  // Next traces/copies it correctly instead of trying to webpack it.
+  serverExternalPackages: ["sharp"],
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "**.supabase.co" }],
+  },
 };
 
 export default nextConfig;

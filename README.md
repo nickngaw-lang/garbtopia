@@ -1,6 +1,17 @@
-# vibe-stack-supabase
+# Garbtopia
 
-Next.js 15 + Supabase starter for shipping vibe-coded apps fast. Clone, provision, build.
+Browse traditional cultural costumes, overlay them on a photo, and save the result — no
+photo-editing skills required.
+
+## How it works
+
+1. Browse the catalog (filter by category, ranked by trending try-count)
+2. Pick a demo photo or upload your own frontal photo
+3. Try a costume — server-side compositing (Sharp) overlays it on the photo
+4. Save the result — it shows up in your gallery
+5. Delete anything you no longer want
+
+No login required for any of this (v1 is demo-first — see `docs/PRD.md`).
 
 ## Stack
 
@@ -10,32 +21,31 @@ Next.js 15 + Supabase starter for shipping vibe-coded apps fast. Clone, provisio
 | Language | TypeScript strict |
 | Styles | Tailwind CSS v4 (CSS-first, no config file) |
 | Auth + DB | Supabase (`@supabase/ssr`) |
-| Package manager | Bun |
+| Image compositing | Sharp (server-side static overlay) |
 | Deploy | Vercel |
 
-## Quick start
+## Project docs
+
+The full plan — data model, architecture, sprints, test plan — lives in `/docs`. Read
+`docs/PRD.md` and `docs/TASKS.md` first.
+
+## Local dev
 
 ```bash
-bun install
-cp .env.example .env.local   # fill in your Supabase keys
-bun dev
+npm install
+vercel env pull .env.local   # pulls NEXT_PUBLIC_SUPABASE_URL / ANON_KEY from Vercel
+npm run dev
 ```
 
-Open http://localhost:3000. Edit `app/page.tsx` to start building.
+Open http://localhost:3000.
 
-## Provisioning a new project
+## Database
 
-Use the `/new-vibe-project <name>` skill (see `claude-dotfiles` repo) which:
-1. Clones this template and renames it
-2. Creates a new GitHub repo and pushes
-3. Creates a Supabase project and injects URL + anon key
-4. Creates a Vercel project linked to the GitHub repo
-5. Triggers first deploy and returns the preview URL
+Schema + migrations live in `supabase/migrations/`, applied in order:
 
-## Working with AI
+- `0001_init.sql` — core tables (costumes, categories, photos, changed_photos, touchpoints) + seed data
+- `0002_seed_assets.sql` — points seed rows at the real static art in `/public` and tunes overlay placement
+- `0003_storage_and_saved.sql` — `saved` flag + Storage buckets for uploads/results
+- `0004_popularity.sql` — `costume_popularity` view for trending ranking
 
-See [CLAUDE.md](CLAUDE.md) for conventions. This repo is pre-wired for gstack — start with `/office-hours`.
-
-## Switching to Neon
-
-If you need Postgres without Supabase (e.g. prefer Drizzle ORM + Clerk for auth), a `vibe-stack-neon` variant is planned. For now: fork this and swap `@supabase/ssr` for `drizzle-orm` + `@neondatabase/serverless`, add Clerk or NextAuth.
+To change the schema, add a new numbered migration — never edit an already-applied one.

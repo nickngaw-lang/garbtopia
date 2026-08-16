@@ -1,0 +1,17 @@
+<svg viewBox="0 0 700 820" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="kenteStripe" width="80" height="820" patternUnits="userSpaceOnUse">
+      <rect width="80" height="820" fill="#f2c84b"/>
+      <rect y="0" width="80" height="60" fill="#1a8a4a"/>
+      <rect y="120" width="80" height="60" fill="#c0304a"/>
+      <rect y="240" width="80" height="60" fill="#1a1a1a"/>
+      <rect y="360" width="80" height="60" fill="#1a8a4a"/>
+      <rect y="480" width="80" height="60" fill="#c0304a"/>
+      <rect y="600" width="80" height="60" fill="#1a1a1a"/>
+      <rect y="720" width="80" height="60" fill="#1a8a4a"/>
+    </pattern>
+  </defs>
+  <!-- toga-style drape over one shoulder, shoulder point clears the head -->
+  <path d="M300 160 L470 210 L520 780 L200 780 L230 420 Z" fill="url(#kenteStripe)"/>
+  <path d="M300 160 L360 160 L420 380 L300 420 Z" fill="url(#kenteStripe)"/>
+</svg>

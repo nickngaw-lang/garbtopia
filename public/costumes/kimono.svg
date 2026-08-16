@@ -1,0 +1,16 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- kimono robe with wide sleeves -->
+  <path d="M350 40 L470 110 L470 260 L620 340 L600 460 L470 400 L470 660 L230 660 L230 400 L100 460 L80 340 L230 260 L230 110 Z"
+        fill="#c0304a"/>
+  <path d="M350 40 L470 110 L470 660 L230 660 L230 110 Z" fill="#d84f68"/>
+  <!-- collar V -->
+  <path d="M350 40 L410 130 L350 230 L290 130 Z" fill="#f4e6d0"/>
+  <!-- obi sash -->
+  <rect x="230" y="400" width="240" height="90" fill="#f2c84b"/>
+  <rect x="315" y="400" width="70" height="90" fill="#a8321f"/>
+  <!-- floral accents -->
+  <circle cx="270" cy="200" r="14" fill="#f6d9c8"/>
+  <circle cx="430" cy="250" r="14" fill="#f6d9c8"/>
+  <circle cx="300" cy="560" r="14" fill="#f6d9c8"/>
+  <circle cx="410" cy="590" r="14" fill="#f6d9c8"/>
+</svg>
